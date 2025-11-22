@@ -1,4 +1,4 @@
-class AppFooter extends HTMLElement {
+class AppContact extends HTMLElement {
     connectedCallback() {
         fetch('/contact.html')
             .then(r => r.text())
@@ -6,4 +6,4 @@ class AppFooter extends HTMLElement {
     }
 }
 
-customElements.define('app-contact', AppFooter);
+customElements.define('app-contact', AppContact);
