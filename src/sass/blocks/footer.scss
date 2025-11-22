@@ -1,0 +1,203 @@
+
+@use "../base/variables.scss" as *;
+
+.footer {
+  background-color: $dark;
+  color: white;
+  padding: 80px 0 40px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  .footer-news-letter {
+    max-width: 360px;
+  }
+
+  .footer-title {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: $light;
+  }
+
+  .footer-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ccc;
+  }
+
+  .footer-input {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  .footer-checkbox {
+    width: 16px;
+    height: 16px;
+    appearance: none;
+    border: 1px solid white;
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+
+    &:checked {
+      background: white;
+      border-color: white;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 5px;
+        width: 4px;
+        height: 8px;
+        border: solid $dark;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .footer-button {
+    width: 120px;
+    height: 42px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background: white;
+      color: $dark;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 70px;
+    }
+  }
+
+
+  .footer-navig {
+    display: grid;
+    grid-template-columns: repeat(3, 140px);
+    gap: 40px;
+
+    @media (min-width: 768px) {
+      min-width: 450px;
+    }
+  }
+
+  .footer-navig-title {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: $light;
+  }
+
+  .footer-navig-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-navig-link {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    color: #ccc;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .footer-social {
+    min-width: 180px;
+
+    @media (min-width: 768px) {
+      margin-left: 40px;
+    }
+
+    @media (min-width: 1200px) {
+      margin-left: 80px;
+    }
+  }
+
+  .footer-social-title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .footer-social-icons {
+    display: flex;
+    gap: 16px;
+  }
+
+  .footer-social-link {
+    font-size: 26px;
+    color: #ccc;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .footer-rights {
+    margin-top: 40px;
+    text-align: center;
+    color: #ccc;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer .footer-navig {
+    grid-template-columns: repeat(3, 170px);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 50px 0 30px;
+
+    .footer-links {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .footer-navig {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-social {
+      margin-left: 0;
+    }
+  }
+}

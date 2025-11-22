@@ -1,0 +1,137 @@
+@use "./base/mixins.scss" as *;
+@use "./base/variables" as *;
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    h1 {
+      margin-left: -5%;
+      align-self: center;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog {
+    margin-top: 36px;
+  }
+}
+
+.filters {
+  &-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px 42px;
+    border: 2px solid $dark;
+    padding: 12px 22px;
+    margin-top: 44px;
+    max-width: 360px;
+    background-color: white;
+  }
+
+  &-filter-item {
+    display: inline-block;
+    background-color: white;
+    border: none;
+    padding: 2px 0;
+    cursor: pointer;
+    position: relative;
+
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: 500;
+
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &.active {
+      border-bottom: 2px solid $dark;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .filters {
+    &-container {
+      max-width: 760px;
+      gap: 14px 46px;
+    }
+  }
+}
+
+.catalog-feed {
+  &-im {
+    width: 335px;
+    height: 235px;
+    object-fit: cover;
+    background-color: white;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 44px;
+    gap: 22px;
+  }
+
+  &-element {
+    width: 335px;
+    border: 2px solid $dark;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    background-color: white;
+
+    &-text {
+      margin: 12px;
+      line-height: 1.35;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog-feed {
+    &-container {
+      position: relative;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 46px 18px;
+
+      &::after {
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        width: 195px;
+        height: 195px;
+        background:
+                linear-gradient(to right, $dark 1px, transparent 1px) top right,
+                linear-gradient(to bottom, $dark 1px, transparent 1px) top right,
+                no-repeat;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog-feed {
+    &-container {
+      margin-top: 84px;
+      margin-bottom: 0;
+
+      &::after {
+        top: -22px;
+        left: -28px;
+      }
+    }
+  }
+}

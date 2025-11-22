@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body>
+<img class="bigbig-img" src="./src/img/potter.png"/>
+
+<div class="main-page">
+    <div class="container">
+        <header class="header">
+
+            <div class="burger"><span></span><span></span><span></span></div>
+
+
+            <div class="header-content">
+                <a href="#" class="header-logotype"><img src="./src/logo/logo.png" alt=""/></a>
+
+                <nav class="header-navig">
+                    <a href="catalog.html" class="h1-title-style header-navig-link">Catalog</a>
+                    <a href="blog.html" class="h1-title-style header-navig-link">Blog</a>
+                    <a href="about.html" class="h1-title-style header-navig-link">About</a>
+                </nav>
+            </div>
+
+            <div class="header-icon">
+                <a href="#"><img class="icon-search" src="./src/img/search-outline.svg"></a>
+                <a href="#"><img class="icon-bag" src="./src/img/shopping-bag.svg"></a>
+            </div>
+
+
+        </header>
+
+        <div class="main-page-main-content">
+            <div class="main-page-text">
+                <h1 class="h1-title-style main-page-quote">
+                    Make your dream come true or decorate your home
+                </h1>
+            </div>
+            <div class="main-page-image">
+                <img src="./src/img/promo/ceramic-vase.jpg" class="main-page-im"/>
+                <button class="default-button main-page__btn">shop now</button>
+            </div>
+        </div>
+
+        <h1 class="title-h1 main-page-title">Create or buy</h1>
+
+        <div class="main-page-info-part">
+            <article class="store-content">
+                <h2 class="title-h2 main-page-title">Our store</h2>
+                <img src="src/img/about/store.jpg" class="store-im"/>
+                <p class="paragraph store-text">Welcome to Ceramic Soul, where each piece tells a story of craftsmanship and creativity. Our handmade ceramics are thoughtfully designed and carefully crafted, blending traditional techniques with modern aesthetics. Whether you're looking for a unique gift or a special addition to your home, our collection offers timeless pieces that bring warmth and authenticity to any space.
+                </p>
+            </article>
+
+            <article class="workshop-content">
+                <h2 class="title-h2 main-page-title">Our workshop</h2>
+                <img src="./src/img/about/ceramic.jpg" class="workshop-im"/>
+
+                <p class="paragraph workshop-text">
+                    At Ceramic Soul workshop, we don’t just craft ceramics—we invite you to get hands-on and create your own unique pieces. Through our engaging masterclasses, you’ll learn traditional techniques, work with natural materials, and experience the joy of shaping clay into something truly personal.
+                </p>
+            </article>
+        </div>
+
+
+
+        <div class="contact">
+            <h1 class="title-h1">Get in touch</h1>
+
+            <div class="contact-content">
+                <div class="contact-form">
+                    <div class="contact-tea">
+                        <img src="./src/img/form/tea.jpg" class="contact-tea-img">
+                    </div>
+
+                    <div class="contact-form-field">
+                        <div class="input-container">
+                            <label class="input-lbl" for="name">Name</label>
+                            <input
+                                    class="input-simple"
+                                    id="name"
+                                    type="text"
+                                    placeholder="Name"
+                            >
+                        </div>
+
+                        <div class="input-container">
+                            <label class="input-lbl" for="email">Email</label>
+                            <input
+                                    class="input-simple"
+                                    id="email"
+                                    type="text"
+                                    placeholder="Email"
+                            >
+                        </div>
+
+                        <div class="input-container">
+                            <label class="input-lbl" for="question">Your question</label>
+                            <textarea
+                                    type="text"
+                                    id="question"
+                                    class="input-textarea"
+                                    placeholder="Question"
+                            ></textarea>
+                        </div>
+
+                        <div class="CheckboxContainer">
+                            <input type="checkbox" id="terms">
+                            <label>I agree with the <a href="#">terms</a></label>
+                        </div>
+
+                        <div class="SubmitPart">
+                            <button class="default-button">Send request</button>
+                            <div class="contactIcon">
+                                <img src="./src/img/form/vase.png" class="contactIconImg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="swiper gallery-swiper">
+        <h1 class="title-h1">check out our works</h1>
+
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./src/img/works/tea-1.jpg" class="galleryIm">
+            </div>
+            <div class="swiper-slide">
+                <img src="./src/img/works/tea-2.jpg"  class="galleryIm">
+            </div>
+            <div class="swiper-slide">
+                <img src="./src/img/works/tea-3.jpg"  class="galleryIm">
+            </div>
+            <div class="swiper-slide">
+                <img src="./src/img/works/tea-1.jpg"  class="galleryIm">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev">
+        </div>
+        <div class="swiper-button-next">
+        </div>
+
+    </div>
+
+</div>
+
+
+<script type="module" src="./src/js/script.js"></script>
+<app-footer></app-footer>
+<script type="module" src="./src/js/footer.js"></script>
+</body>
+</html>
+

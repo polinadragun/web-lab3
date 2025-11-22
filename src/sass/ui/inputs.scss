@@ -1,0 +1,82 @@
+@use "../base/variables.scss" as *;
+
+.input {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 340px;
+    margin: 10px 0;
+  }
+
+  &-lbl {
+    font-size: 14px;
+    padding: 0 0 4px 0;
+    color: $dark;
+  }
+
+  &-simple {
+    padding: 10px 0 10px 12px;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid $border-white;
+
+    &::placeholder {
+      color: $ui-disabled;
+    }
+
+    &:focus {
+      border-color: $dark;
+      outline: none;
+    }
+
+    &:invalid {
+      border-color: $ui-error;
+    }
+  }
+
+  &-textarea {
+    width: 100%;
+    height: 132px;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid $border-white;
+    border-radius: 4px;
+    resize: none;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $ui-disabled;
+    }
+
+    &:focus {
+      border-color: $dark;
+      outline: none;
+    }
+
+    &:invalid {
+      border-color: $ui-error;
+    }
+  }
+}
+
+.input-footer {
+  width: 300px;
+  padding: 12px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+
+  &::placeholder {
+    color: #ccc;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom-color: $ceramic;
+  }
+}
