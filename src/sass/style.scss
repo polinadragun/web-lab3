@@ -1,4 +1,7 @@
 @use "./base/reset.scss";
+@use "./base/mixins.scss";
+@use "./base/variables.scss";
+@use "./base/basic.scss";
 
 @use "./ui/titles.scss";
 @use "./ui/buttons.scss";
@@ -11,3 +14,4 @@
 @use "./home.scss";
 @use "./catalog.scss";
 @use "./about.scss";
+@use "./blog.scss";
