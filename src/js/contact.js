@@ -1,6 +1,6 @@
 class AppFooter extends HTMLElement {
     connectedCallback() {
-        fetch('./contact.html')
+        fetch('/contact.html')
             .then(r => r.text())
             .then(html => this.innerHTML = html);
     }

@@ -1,6 +1,6 @@
 class AppFooter extends HTMLElement {
     connectedCallback() {
-        fetch('./footer.html')
+        fetch('/footer.html')
             .then(r => r.text())
             .then(html => this.innerHTML = html);
     }
