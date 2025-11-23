@@ -30,7 +30,7 @@
 
 
 .blog_feed {
-  -container {
+  &-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,14 +85,14 @@
 
 @media (min-width: 768px) {
   .blog_feed {
-    -container {
+    &-container {
       position: relative;
       flex-direction: row;
       flex-wrap: wrap;
       margin: 40px 15px;
 
       &::after {
-        -content: '';
+        &-content: '';
         position: absolute;
         top: -20px;
         left: -20px;
@@ -129,7 +129,7 @@
 
 @media (min-width: 1200px) {
   .blog_feed {
-    -container {
+    &-container {
       margin-top: 80px;
       margin-bottom: 0;
       align-items: flex-start;
