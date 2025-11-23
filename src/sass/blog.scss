@@ -92,7 +92,7 @@
       margin: 40px 15px;
 
       &::after {
-        &-content: '';
+        -content: '';
         position: absolute;
         top: -20px;
         left: -20px;
