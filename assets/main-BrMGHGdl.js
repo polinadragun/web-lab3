@@ -1,29 +1,35 @@
-(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const r of n)if(r.type==="childList")for(const l of r.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&i(l)}).observe(document,{childList:!0,subtree:!0});function t(n){const r={};return n.integrity&&(r.integrity=n.integrity),n.referrerPolicy&&(r.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?r.credentials="include":n.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function i(n){if(n.ep)return;n.ep=!0;const r=t(n);fetch(n.href,r)}})();class ze extends HTMLElement{connectedCallback(){fetch("header.html").then(s=>s.text()).then(s=>this.innerHTML=s)}}customElements.define("app-header",ze);class Ge extends HTMLElement{connectedCallback(){fetch("footer.html").then(s=>s.text()).then(s=>this.innerHTML=s)}}customElements.define("app-footer",Ge);class _e extends HTMLElement{connectedCallback(){fetch("contact.html").then(s=>s.text()).then(s=>this.innerHTML=s)}}customElements.define("app-contact",_e);const ve="https://ceramic-api.onrender.com";async function De(){const e=`${ve}/api/posts`,s=await fetch(e,{headers:{Accept:"application/json"}});if(!s.ok)throw new Error(`Ошибка загрузки постов: ${s.status}`);return s.json()}function Be(e){const s=document.querySelector(".blog_feedContainer");s&&(s.innerHTML="",e.forEach(t=>{s.insertAdjacentHTML("beforeend",`
+(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const r of n)if(r.type==="childList")for(const l of r.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&i(l)}).observe(document,{childList:!0,subtree:!0});function t(n){const r={};return n.integrity&&(r.integrity=n.integrity),n.referrerPolicy&&(r.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?r.credentials="include":n.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function i(n){if(n.ep)return;n.ep=!0;const r=t(n);fetch(n.href,r)}})();class ze extends HTMLElement{connectedCallback(){fetch("header.html").then(s=>s.text()).then(s=>this.innerHTML=s)}}customElements.define("app-header",ze);class Ge extends HTMLElement{connectedCallback(){fetch("footer.html").then(s=>s.text()).then(s=>this.innerHTML=s)}}customElements.define("app-footer",Ge);class _e extends HTMLElement{connectedCallback(){fetch("contact.html").then(s=>s.text()).then(s=>this.innerHTML=s)}}customElements.define("app-contact",_e);const ve="https://ceramic-api.onrender.com";async function De(){const e=`${ve}/api/posts`,s=await fetch(e,{headers:{Accept:"application/json"}});if(!s.ok)throw new Error(`Ошибка загрузки постов: ${s.status}`);return s.json()}function Be(e){const s=document.querySelector(".blog_feed-container");s&&(s.innerHTML="",e.forEach(t=>{s.insertAdjacentHTML("beforeend",`
             <div class="blog_feed__element">
+
                 <div class="blog_feed__element__header">
 
-                    <img src="${ve}${t.image}" 
-                         alt="${t.title}" 
-                         class="blog_feed__element__headerIm" />
+                    <img 
+                        src="${ve}${t.image}" 
+                        alt="${t.title}" 
+                        class="blog_feed__element__header-im"
+                    />
 
-                    <div class="blog_feed__element__headerTitle_block">
-                        <h2 class="title-h2 blog_feed__element__headerTitle_blockTitle">
-                          ${t.title}
+                    <div class="blog_feed__element__header-title_block">
+                        <h2 class="title-h2 blog_feed__element__header-title_block-title">
+                            ${t.title}
                         </h2>
 
-                        <button class="default-button blog_feed__element__headerTitle_block__button" 
-                                data-post-id="${t.id}">
-                          read
+                        <button 
+                            class="default-button blog_feed__element__header-title_block__button"
+                            data-post-id="${t.id}"
+                        >
+                            read
                         </button>
                     </div>
 
                 </div>
 
-                <p class="paragraph blog_feed__elementText">
+                <p class="paragraph blog_feed__element-text">
                     ${t.excerpt??""}
                 </p>
+
             </div>
-        `)}))}async function $e(){try{const e=await De();Be(e)}catch(e){console.error("Ошибка загрузки постов:",e)}}$e();const Se="https://ceramic-api.onrender.com";function Ve(e){return{EUR:"€",USD:"$",GBP:"£"}[e]??e}async function be(e=""){let s=`${Se}/api/products`;e&&(s+=`?category=${encodeURIComponent(e)}`);const t=await fetch(s,{headers:{Accept:"application/json"}});if(!t.ok)throw new Error(`Ошибка: ${t.status}`);return t.json()}const Z=document.querySelector(".catalog-feed-container");function ye(e){Z&&(Z.innerHTML="",e.forEach(s=>{Z.insertAdjacentHTML("beforeend",`
+            `)}))}async function $e(){try{const e=await De();Be(e)}catch(e){console.error("Ошибка загрузки постов:",e)}}$e();const Se="https://ceramic-api.onrender.com";function Ve(e){return{EUR:"€",USD:"$",GBP:"£"}[e]??e}async function be(e=""){let s=`${Se}/api/products`;e&&(s+=`?category=${encodeURIComponent(e)}`);const t=await fetch(s,{headers:{Accept:"application/json"}});if(!t.ok)throw new Error(`Ошибка: ${t.status}`);return t.json()}const Z=document.querySelector(".catalog-feed-container");function ye(e){Z&&(Z.innerHTML="",e.forEach(s=>{Z.insertAdjacentHTML("beforeend",`
             <div class="catalog-feed-element">
 
                 <img src="${Se}${s.image}" 
