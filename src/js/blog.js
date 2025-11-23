@@ -4,7 +4,9 @@ async function loadPosts() {
     const url = `${BASE_URL}/api/posts`;
 
     const res = await fetch(url, {
-        headers: { Accept: "application/json" }
+        headers: {
+            Accept: "application/json",
+        },
     });
 
     if (!res.ok) {
@@ -13,6 +15,7 @@ async function loadPosts() {
 
     return res.json();
 }
+
 
 function renderPosts(posts) {
     const container = document.querySelector(".blog_feed-container");
@@ -25,25 +28,20 @@ function renderPosts(posts) {
             "beforeend",
             `
             <div class="blog_feed__element">
-
                 <div class="blog_feed__element__header">
 
-                    <img 
-                        src="${BASE_URL}${item.image}" 
-                        alt="${item.title}" 
-                        class="blog_feed__element__header-im"
-                    />
+                    <img src="${BASE_URL}${item.image}" 
+                         alt="${item.title}" 
+                         class="blog_feed__element__header-im" />
 
                     <div class="blog_feed__element__header-title_block">
                         <h2 class="title-h2 blog_feed__element__header-title_block-title">
-                            ${item.title}
+                          ${item.title}
                         </h2>
 
-                        <button 
-                            class="default-button blog_feed__element__header-title_block__button"
-                            data-post-id="${item.id}"
-                        >
-                            read
+                        <button class="default-button blog_feed__element__header-title_block__button" 
+                                data-post-id="${item.id}">
+                          read
                         </button>
                     </div>
 
@@ -52,9 +50,8 @@ function renderPosts(posts) {
                 <p class="paragraph blog_feed__element-text">
                     ${item.excerpt ?? ""}
                 </p>
-
             </div>
-            `
+        `
         );
     });
 }
