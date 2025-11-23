@@ -6,3 +6,5 @@ import './src/js/contact.js';
 
 import './src/js/products.js';
 import './src/js/script.js';
+
+console.log("MAIN LOADED");
